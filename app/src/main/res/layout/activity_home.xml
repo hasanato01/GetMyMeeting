@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="20dp"
+    tools:context=".HomeActivity">
+
+    <!--#region profile -->
+    <LinearLayout
+        android:id="@+id/profileSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--region profile picture-->
+        <ImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/profile_image_alt"
+            android:src="@drawable/profile" />
+        <!--endregion-->
+
+        <!--region welcome and name-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:orientation="vertical">
+
+            <!--welcome label-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back "
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+
+            <!--user full name-->
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20sp" />
+        </LinearLayout>
+        <!--endregion-->
+    </LinearLayout>
+    <!--#endregion-->
+
+    <!--#region search -->
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="12"
+        app:layout_constraintTop_toBottomOf="@id/profileSection">
+
+        <!--search box-->
+        <EditText
+            android:id="@+id/tboxSearch"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="10.5"
+            android:background="@drawable/edit_text_style"
+            android:hint="Search..."
+            android:paddingStart="10dp"
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields" />
+
+        <!--search button-->
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/default_button_style"
+            android:src="@drawable/icon_search"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+    <!--#endregion-->
+
+    <!--#region cards-->
+    <LinearLayout
+        android:id="@+id/cardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout">
+        <!--Meeting cards will be created programmatically-->
+    </LinearLayout>
+    <!--#endregion-->
+
+    <!--region bottom navbar-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemIconTint="@drawable/bottom_nav_item_color_selector"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navbar_logged_in" />
+    <!--endregion-->
+
+    <TextView
+        android:id="@+id/noResLbl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:onClick="createResClicked"
+        android:text="No new reservations, click to create"
+        android:textColor="@color/link_text_color"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/edittext_style</item>
+        <item name="android:spinnerItemStyle">@layout/spinner_item</item>
+        <item name="android:dropDownSelector">@drawable/spinner_selector</item>
+    </style>
+
+    <drawable name="spinner_selector">#00F</drawable>
+
+    <style name="Widget.Theme.GetMyMeeting.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+        <item name="exampleColor">@color/light_blue_400</item>
+    </style>
+</resources>

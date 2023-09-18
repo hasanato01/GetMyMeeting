@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:scrollbars="vertical"
+    tools:context=".EditReservationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--region Page Title-->
+        <TextView
+            android:id="@+id/pageTitleLbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Edit Your Reservation"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <!--region line-->
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/line"
+            app:layout_constraintTop_toBottomOf="@id/pageTitleLbl" />
+        <!--endregion-->
+
+        <!--endregion-->
+
+        <!--region content-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/pageTitleLbl">
+            <!--region Title-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:labelFor="@id/tboxTitle"
+                android:text="Title"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/tboxTitle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_style"
+                android:paddingHorizontal="10dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+            <!--endregion-->
+
+            <!--region Name-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:labelFor="@id/tboxName"
+                android:text="Name"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/tboxName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_style"
+                android:paddingHorizontal="10dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+            <!--endregion-->
+
+            <!--region Room-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:labelFor="@id/spnrRoom"
+                android:text="Room"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <Spinner
+                android:id="@+id/spnrRoom"
+                style="@style/SpinnerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingHorizontal="10dp" />
+            <!--endregion-->
+
+            <!--region Date-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:labelFor="@id/btnSelectDate"
+                android:text="Select Date"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <android.widget.Button
+                android:id="@+id/btnSelectDate"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_style"
+                android:onClick="onSelectDate"
+                android:paddingHorizontal="10dp"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/textColor"
+                tools:ignore="HardcodedText" />
+            <!--endregion-->
+
+            <!--region Time-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:labelFor="@id/btnSelectTime"
+                android:text="Select Time"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <android.widget.Button
+                android:id="@+id/btnSelectTime"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_style"
+                android:onClick="showTimePicker"
+                android:paddingHorizontal="10dp"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/textColor"
+                tools:ignore="HardcodedText" />
+            <!--endregion-->
+
+            <!--region Description-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:labelFor="@id/tboxDesc"
+                android:text="Description"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/tboxDesc"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_style"
+                android:inputType="textMultiLine"
+                android:paddingHorizontal="10dp"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+            <!--endregion-->
+
+            <!--region Agreement-->
+            <CheckBox
+                android:id="@+id/chkAgree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="I agree to the Terms of Use"
+                tools:ignore="HardcodedText" />
+            <!--endregion-->
+
+            <!--region Buttons-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <android.widget.Button
+                    android:id="@+id/btnSaveReservation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="5"
+                    android:background="@drawable/default_button_style"
+                    android:onClick="onSaveButtonClick"
+                    android:text="Save Changes"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
+
+                <android.widget.Button
+                    android:id="@+id/btnDiscard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="5"
+                    android:background="@drawable/danger_button_style"
+                    android:onClick="onDiscardButtonClicked"
+                    android:text="Discard Changes"
+                    android:textAllCaps="false"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+            <!--endregion-->
+        </LinearLayout>
+        <!--endregion-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

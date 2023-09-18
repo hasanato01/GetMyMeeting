@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".PastReservationsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--region page title-->
+        <TextView
+            android:id="@+id/pageTitleLbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="10"
+            android:text="Past reservations"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+        <!--endregion-->
+
+        <!--region line-->
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/line"
+            app:layout_constraintTop_toBottomOf="@id/pageTitleLbl" />
+        <!--endregion-->
+
+        <!--region search -->
+        <LinearLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="12"
+            app:layout_constraintTop_toBottomOf="@id/line">
+
+            <EditText
+                android:id="@+id/tboxSearch"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="8"
+                android:background="@drawable/edit_text_style"
+                android:hint="Search..."
+                android:paddingStart="10dp"
+                tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields" />
+
+            <android.widget.Button
+                android:id="@+id/btnSelectDate"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="3"
+                android:background="@drawable/default_button_style"
+                android:onClick="onSelectDate"
+                android:text="Date"
+                android:textAllCaps="false"
+                tools:ignore="ContentDescription, HardcodedText" />
+        </LinearLayout>
+        <!--endregion-->
+
+        <!--region cards -->
+        <LinearLayout
+            android:id="@+id/reservationCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="25dp"
+            android:background="@drawable/card_style"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintTop_toBottomOf="@id/searchLayout">
+
+            <TextView
+                android:id="@+id/noResultLbl"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="It seems to be quiet here."
+                android:textColor="@color/link_text_color"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/bottomNav"
+                app:layout_constraintTop_toBottomOf="@id/searchLayout"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+        <!--endregion-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

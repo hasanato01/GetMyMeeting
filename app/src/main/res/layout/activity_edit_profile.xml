@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    tools:context=".EditProfileActivity">
+
+    <!--region Page title-->
+    <TextView
+        android:id="@+id/pageTitleLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Edit Profile"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+    <!--endregion-->
+
+    <!--region Dividing Line-->
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/line"
+        app:layout_constraintTop_toBottomOf="@id/pageTitleLbl" />
+    <!--endregion-->
+
+    <!--region Profile details fields-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+        <!--region Upload image-->
+        <ImageView
+            android:id="@+id/uploadImage"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="Upload Image"
+            android:onClick="selectImage"
+            android:src="@drawable/upload_image_black"
+            tools:ignore="HardcodedText" />
+        <!--endregion-->
+
+        <!--region Full name-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:labelFor="@id/tboxFullName"
+            android:text="Full Name"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/tboxFullName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text_style"
+            android:inputType="text"
+            android:paddingHorizontal="5dp"
+            tools:ignore="Autofill,LabelFor" />
+        <!--endregion-->
+
+        <!--region Email-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:labelFor="@id/tboxEmail"
+            android:text="Email"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/tboxEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_style"
+            android:focusable="false"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="5dp"
+            tools:ignore="Autofill,LabelFor" />
+        <!--endregion-->
+
+        <!--region Company-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:labelFor="@id/tboxCompany"
+            android:text="Company"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/tboxCompany"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_style"
+            android:inputType="text"
+            android:paddingHorizontal="5dp"
+            tools:ignore="Autofill,LabelFor" />
+        <!--endregion-->
+
+        <!--region Password (Hidden)-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:labelFor="@id/tboxPass"
+            android:text="Password"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/tboxPass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text_style"
+            android:focusable="false"
+            android:inputType="textPassword"
+            android:paddingHorizontal="5dp"
+            android:visibility="invisible"
+            tools:ignore="Autofill,LabelFor" />
+        <!--endregion-->
+
+        <!--region Save and Discard buttons-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="12">
+
+            <android.widget.Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="5"
+                android:background="@drawable/default_button_style"
+                android:onClick="onSaveButtonClick"
+                android:text="Save"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+
+            <android.widget.Button
+                android:id="@+id/btnDiscard"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="5"
+                android:background="@drawable/danger_button_style"
+                android:text="Discard"
+                android:textAllCaps="false"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+        <!--endregion-->
+
+    </LinearLayout>
+    <!--endregion-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

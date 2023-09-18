@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    tools:context=".AddRoomActivity">
+
+    <!--region Page Title-->
+    <TextView
+        android:id="@+id/pageTitleLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Add New Room"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+    <!--endregion-->
+
+    <!--region Dividing Line-->
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/line"
+        app:layout_constraintTop_toBottomOf="@id/pageTitleLbl" />
+    <!--endregion-->
+
+    <!--region Room details fields-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/line">
+        <!--region Room name-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Name"
+            android:textAlignment="textStart"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/tboxName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_style"
+            android:inputType="text"
+            android:paddingStart="2dp"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+        <!--endregion-->
+
+        <!--region Room Location-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:text="Location"
+            android:textAlignment="textStart"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Spinner
+            android:id="@+id/spnrLocation"
+            style="@style/SpinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp" />
+        <!--endregion-->
+
+        <!--region Seat Count-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:text="Seat Count"
+            android:textAlignment="textStart"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/tboxSeatCount"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_style"
+            android:inputType="number"
+            android:paddingStart="2dp"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
+        <!--endregion-->
+    </LinearLayout>
+    <!--endregion-->
+
+    <!--region Save room button-->
+    <android.widget.Button
+        android:id="@+id/btnSaveRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/default_button_style"
+        android:onClick="onSaveRoomClicked"
+        android:text="Save room"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <!--endregion-->
+</androidx.constraintlayout.widget.ConstraintLayout>

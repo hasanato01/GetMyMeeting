@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "136040229607",
+    "project_id": "getmymeeting-70c05",
+    "storage_bucket": "getmymeeting-70c05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136040229607:android:960745c14052a09a239042",
+        "android_client_info": {
+          "package_name": "com.example.getmymeeting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136040229607-l21o4oivc4s9mcfn0hfik9jpi30b04q0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkvWysezPm9_W3SYpDQDQah9e4B9cWpyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136040229607-l21o4oivc4s9mcfn0hfik9jpi30b04q0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
